@@ -21,16 +21,19 @@ class MainActivity : AppCompatActivity() {
         val carPrice:Double = txtCarPrice.text.toString().toDouble()
         val downPayment:Double = txtDownPayment.text.toString().toDouble()
         val carLoan:Double
+
         carLoan = carPrice - downPayment
         txtCarLoan.text = "RM " + "%.2f".format(carLoan)
 
         val rate:Double = txtInterestRate.text.toString().toDouble()
         val loanPeriod:Int = txtLoanPeriod.text.toString().toInt()
         val interest:Double
+
         interest = carLoan * rate * loanPeriod
         txtInterest.text = "RM " + "%.2f".format(interest)
 
         val monthlyRepayment:Double
+
         monthlyRepayment = (carLoan + interest) / loanPeriod / 12
         txtMonthlyRepayment.text = "RM " + "%.2f".format(monthlyRepayment)
     }
